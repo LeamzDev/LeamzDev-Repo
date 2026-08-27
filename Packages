@@ -4,6 +4,31 @@ Architecture: iphoneos-arm64e
 Filename: ./Tweaks/com.leamdev.tendies16_0.9.1_iphoneos-arm64e.deb
 Size: 1559796
 SHA256: ffddaf1df4f7999fc0136fb38476c2348ca9c1b3b73f5e43c03107b1d538b748
-Description: com.leamdev.tendies16 jailbreak tweak
-Section: Tweaks
+Description: # Tendies16
 
+Bring modern `.tendies` wallpapers to iOS 16.
+
+Tendies16 is an experimental PosterBoard importer that allows `.tendies` files to be installed and reconstructed on iOS 16.
+
+It rebuilds modern Mica wallpapers into a CAML structure supported by iOS 16, preserving their assets, layers and animations. `Locked`, `Unlock` and `Sleep` states are automatically converted into native `CABasicAnimation` sequences, with responsive scaling for iPhone X.
+
+### Features
+
+* Import `.tendies` wallpapers directly into PosterBoard
+* Reconstruct modern Mica animations
+* Support for `Locked`, `Unlock` and `Sleep` states
+* Preserves wallpaper assets and layer hierarchy
+* Automatically converts size changes into equivalent scaling
+* Supports older Mica projects and `CAEmitterLayer` configurations
+* Includes automatic backup and restore of the original Collections configuration
+* Safely rejects unsupported wallpapers instead of installing a broken or black wallpaper
+
+### Tested on
+
+* iPhone X
+* iOS 16.7.12
+* Dopamine RootHide / checkm8
+
+**Experimental software. Back up your PosterBoard configuration before importing wallpapers.**
+
+Section: Tweaks
