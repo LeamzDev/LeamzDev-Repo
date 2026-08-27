@@ -1,0 +1,9 @@
+Package: com.leamdev.tendies16
+Version: 0.9.1
+Architecture: iphoneos-arm64e
+Filename: ./Tweaks/com.leamdev.tendies16_0.9.1_iphoneos-arm64e.deb
+Size: 1559796
+SHA256: ffddaf1df4f7999fc0136fb38476c2348ca9c1b3b73f5e43c03107b1d538b748
+Description: com.leamdev.tendies16 jailbreak tweak
+Section: Tweaks
+

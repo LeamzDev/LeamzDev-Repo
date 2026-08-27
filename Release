@@ -1,0 +1,7 @@
+Origin: LeamzDev's Repo
+Label: LeamzDev's Repo
+Suite: stable
+Codename: stable
+Architectures: iphoneos-arm64 iphoneos-arm64e
+Components: main
+Description: LeamzDev's Repo for Sileo
