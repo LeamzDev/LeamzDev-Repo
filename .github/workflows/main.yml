@@ -1,0 +1,43 @@
+name: Regenerate Packages index
+
+on:
+  push:
+    paths:
+      - 'Tweaks/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dpkg-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y dpkg-dev
+
+      - name: Generate Packages index
+        run: |
+          # Generate Packages from .deb files in the Tweaks directory
+          dpkg-scanpackages ./Tweaks /dev/null | tee Packages | gzip -9c > Packages.gz
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          git add Packages Packages.gz || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Regenerate Packages index"
+            git push
+          fi
